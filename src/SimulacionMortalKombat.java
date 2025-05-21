@@ -52,12 +52,11 @@ class Personaje {
 public class SimulacionMortalKombat {
 
     public static void fraseFinal(String ganador, String perdedor) {
-        System.out.println("\n*** " + perdedor + " está en las últimas... ***");
-        System.out.println(">>> " + ganador.toUpperCase() + ": \"FINISH HIM!!\"");
-        System.out.println("💀 " + ganador + " realiza un FATALITY sobre " + perdedor + " 💀");
-        System.out.println("🔥 ¡" + ganador + " gana la batalla! 🔥\n");
+        System.out.println("" + perdedor + " está en las últimas");
+        System.out.println("" + ganador.toUpperCase() + " \"FINISH HIM!\"");
+        System.out.println("" + ganador + " realiza un FATALITY sobre " + perdedor + "");
+        System.out.println("¡" + ganador + " gana la batalla!");
     }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
