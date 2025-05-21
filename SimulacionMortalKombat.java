@@ -17,7 +17,8 @@ class Personaje {
     public void atacar(Personaje oponente) {
         System.out.println(nombre + " ataca a " + oponente.nombre + " con fuerza de " + fuerza + " puntos.");
         oponente.resistencia -= fuerza;
-        if (oponente.resistencia < 0) oponente.resistencia = 0;
+        if (oponente.resistencia < 0)
+            oponente.resistencia = 0;
         System.out.println(oponente.nombre + " ahora tiene " + oponente.resistencia + " puntos de resistencia.\n");
     }
 
@@ -38,9 +39,11 @@ class Personaje {
         int danio = fuerza + velocidad;
         int resistenciaInicial = oponente.resistencia;
         oponente.resistencia -= danio;
-        if (oponente.resistencia < 0) oponente.resistencia = 0;
+        if (oponente.resistencia < 0)
+            oponente.resistencia = 0;
         int danioReal = resistenciaInicial - oponente.resistencia;
-        System.out.println(nombre + " realiza un ATAQUE ESPECIAL a " + oponente.nombre + " causando " + danioReal + " puntos de daño.");
+        System.out.println(nombre + " realiza un ATAQUE ESPECIAL a " + oponente.nombre + " causando " + danioReal
+                + " puntos de daño.");
         System.out.println(oponente.nombre + " ahora tiene " + oponente.resistencia + " puntos de resistencia.\n");
         return danioReal;
     }
@@ -59,16 +62,16 @@ public class SimulacionMortalKombat {
         Scanner scanner = new Scanner(System.in);
 
         Personaje[] personajes = {
-            new Personaje("Scorpion", 30, 20, 100),
-            new Personaje("Sub-Zero", 28, 22, 110),
-            new Personaje("Liu Kang", 32, 25, 95),
-            new Personaje("Raiden", 27, 23, 105),
-            new Personaje("Kitana", 25, 28, 90),
-            new Personaje("Kung Lao", 29, 24, 97),
-            new Personaje("Sonya Blade", 26, 26, 92),
-            new Personaje("Jax", 33, 18, 120),
-            new Personaje("Mileena", 28, 27, 89),
-            new Personaje("Reptile", 27, 25, 93)
+                new Personaje("Scorpion", 30, 20, 100),
+                new Personaje("Sub-Zero", 28, 22, 110),
+                new Personaje("Liu Kang", 32, 25, 95),
+                new Personaje("Raiden", 27, 23, 105),
+                new Personaje("Kitana", 25, 28, 90),
+                new Personaje("Kung Lao", 29, 24, 97),
+                new Personaje("Sonya Blade", 26, 26, 92),
+                new Personaje("Jax", 33, 18, 120),
+                new Personaje("Mileena", 28, 27, 89),
+                new Personaje("Reptile", 27, 25, 93)
         };
 
         System.out.println("=== Selección de Personajes Mortal Kombat ===");
