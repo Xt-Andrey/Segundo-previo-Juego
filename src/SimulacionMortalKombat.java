@@ -6,14 +6,14 @@ class Personaje {
     int fuerza;
     int velocidad;
     int resistencia;
-
+   
     public Personaje(String nombre, int fuerza, int velocidad, int resistencia) {
         this.nombre = nombre;
         this.fuerza = fuerza;
         this.velocidad = velocidad;
         this.resistencia = resistencia;
     }
-
+    //paso por referencia 
     public void atacar(Personaje oponente) {
         System.out.println(nombre + " ataca a " + oponente.nombre + " con fuerza de " + fuerza + " puntos.");
         oponente.resistencia -= fuerza;
@@ -29,12 +29,12 @@ class Personaje {
         System.out.println("Resistencia: " + resistencia);
         System.out.println("-----------------------------------\n");
     }
-
+    ///paso por referencia 
     public void recuperarse() {
         resistencia += 15;
         System.out.println(nombre + " se recupera y ahora tiene " + resistencia + " puntos de resistencia.\n");
     }
-
+   //paso por referencia
     public int ataqueEspecial(Personaje oponente) {
         int danio = fuerza + velocidad;
         int resistenciaInicial = oponente.resistencia;
@@ -116,7 +116,7 @@ public class SimulacionMortalKombat {
         Personaje jugador2 = personajes[eleccion2 - 1];
         System.out.println("Jugador 2 ha elegido: " + jugador2.nombre);
 
-        System.out.println("\nEstadísticas iniciales:");
+        System.out.println("Estadísticas iniciales:");
         jugador1.mostrarEstadisticas();
         jugador2.mostrarEstadisticas();
 
@@ -150,6 +150,7 @@ public class SimulacionMortalKombat {
             }
 
             switch (opcion) {
+                //paso por referencia 
                 case 1:
                     atacante.atacar(defensor);
                     if (defensor.resistencia == 0) {

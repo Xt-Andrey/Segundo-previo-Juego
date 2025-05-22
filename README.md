@@ -10,7 +10,7 @@ Cada jugador elige un personaje del universo Mortal Kombat, tiene para elejir a 
 
 Colocamos a "Atacar" como el base o sea el ataque menos poderoso.
 Hacer un "ataque especial" es mas poderoso que el atacar porque segun el personaje que haya elijido lo puede hasta duplicar.
-tambien se puede usar la abilidad de "Recuperarse" asi aumentando la resistencia del personaje.
+tambien se puede usar la abilidad de "Resistencia" asi modificando directamente dandole una mejora al que use esta opcion.
 la opcion  "Ver las estadísticas" permite ver las estadisticas de los personajes de ambos jugadores como "fuerza, velocidad, resistencia", asi viendo cuanto le queda despues de cada ataque o al iniciar la partida.
 la opcion "Terminar la pelea" es por si un jugador se quiere retirar del juego, al retirarce no da a ninguno como ganador.
 
