@@ -13,13 +13,13 @@ class Personaje {
         this.velocidad = velocidad;
         this.resistencia = resistencia;
     }
-    //paso por referencia 
+    
     public void atacar(Personaje oponente) {
         System.out.println(nombre + " ataca a " + oponente.nombre + " con fuerza de " + fuerza + " puntos.");
         oponente.resistencia -= fuerza;
         if (oponente.resistencia < 0)
             oponente.resistencia = 0;
-        System.out.println(oponente.nombre + " ahora tiene " + oponente.resistencia + " puntos de resistencia.\n");
+        System.out.println(oponente.nombre + " ahora tiene " + oponente.resistencia + " puntos de resistencia");
     }
 
     public void mostrarEstadisticas() {
@@ -29,12 +29,12 @@ class Personaje {
         System.out.println("Resistencia: " + resistencia);
         System.out.println("-----------------------------------\n");
     }
-    ///paso por referencia 
+
     public void recuperarse() {
         resistencia += 15;
-        System.out.println(nombre + " se recupera y ahora tiene " + resistencia + " puntos de resistencia.\n");
+        System.out.println(nombre + " se recupera y ahora tiene " + resistencia + " puntos de resistencia.");
     }
-   //paso por referencia
+
     public int ataqueEspecial(Personaje oponente) {
         int danio = fuerza + velocidad;
         int resistenciaInicial = oponente.resistencia;
@@ -44,7 +44,7 @@ class Personaje {
         int danioReal = resistenciaInicial - oponente.resistencia;
         System.out.println(nombre + " realiza un ATAQUE ESPECIAL a " + oponente.nombre + " causando " + danioReal
                 + " puntos de daño.");
-        System.out.println(oponente.nombre + " ahora tiene " + oponente.resistencia + " puntos de resistencia.\n");
+        System.out.println(oponente.nombre + " ahora tiene " + oponente.resistencia + " puntos de resistencia.");
         return danioReal;
     }
 }
@@ -150,7 +150,7 @@ public class SimulacionMortalKombat {
             }
 
             switch (opcion) {
-                //paso por referencia 
+                
                 case 1:
                     atacante.atacar(defensor);
                     if (defensor.resistencia == 0) {
