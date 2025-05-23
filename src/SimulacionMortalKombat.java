@@ -6,20 +6,28 @@ class Personaje {
     int fuerza;
     int velocidad;
     int resistencia;
-   
+
     public Personaje(String nombre, int fuerza, int velocidad, int resistencia) {
         this.nombre = nombre;
         this.fuerza = fuerza;
         this.velocidad = velocidad;
         this.resistencia = resistencia;
     }
-    
+
     public void atacar(Personaje oponente) {
         System.out.println(nombre + " ataca a " + oponente.nombre + " con fuerza de " + fuerza + " puntos.");
         oponente.resistencia -= fuerza;
         if (oponente.resistencia < 0)
             oponente.resistencia = 0;
-        System.out.println(oponente.nombre + " ahora tiene " + oponente.resistencia + " puntos de resistencia");
+        System.out.println(oponente.nombre + " ahora tiene " + oponente.resistencia + " puntos de resistencia.\n");
+    }
+
+    public void atacar(Personaje oponente, int bonusFuerza) {
+        int danioTotal = fuerza + bonusFuerza;
+        System.out.println(nombre + " ataca con un bonus de fuerza, causando " + danioTotal + " puntos de daño a " + oponente.nombre);
+        oponente.resistencia -= danioTotal;
+        if (oponente.resistencia < 0) oponente.resistencia = 0;
+        System.out.println(oponente.nombre + " ahora tiene " + oponente.resistencia + " puntos de resistencia.\n");
     }
 
     public void mostrarEstadisticas() {
@@ -32,7 +40,12 @@ class Personaje {
 
     public void recuperarse() {
         resistencia += 15;
-        System.out.println(nombre + " se recupera y ahora tiene " + resistencia + " puntos de resistencia.");
+        System.out.println(nombre + " se recupera y ahora tiene " + resistencia + " puntos de resistencia.\n");
+    }
+
+    public void recuperarse(int puntosRecuperados) {
+        resistencia += puntosRecuperados;
+        System.out.println(nombre + " se recupera en " + puntosRecuperados + " puntos y ahora tiene " + resistencia + " de resistencia.\n");
     }
 
     public int ataqueEspecial(Personaje oponente) {
@@ -44,8 +57,38 @@ class Personaje {
         int danioReal = resistenciaInicial - oponente.resistencia;
         System.out.println(nombre + " realiza un ATAQUE ESPECIAL a " + oponente.nombre + " causando " + danioReal
                 + " puntos de daño.");
-        System.out.println(oponente.nombre + " ahora tiene " + oponente.resistencia + " puntos de resistencia.");
+        System.out.println(oponente.nombre + " ahora tiene " + oponente.resistencia + " puntos de resistencia.\n");
         return danioReal;
+    }
+
+    public int ataqueEspecial(Personaje oponente, double multiplicador) {
+        int danio = (int) ((fuerza + velocidad) * multiplicador);
+        int resistenciaInicial = oponente.resistencia;
+        oponente.resistencia -= danio;
+        if (oponente.resistencia < 0) oponente.resistencia = 0;
+        int danioReal = resistenciaInicial - oponente.resistencia;
+        System.out.println(nombre + " realiza un ATAQUE ESPECIAL mejorado causando " + danioReal + " puntos de daño.");
+        System.out.println(oponente.nombre + " ahora tiene " + oponente.resistencia + " puntos de resistencia.\n");
+        return danioReal;
+    }
+}
+
+// Subclases para aplicar herencia
+class Ninja extends Personaje {
+    public Ninja(String nombre, int fuerza, int velocidad, int resistencia) {
+        super(nombre, fuerza, velocidad, resistencia);
+    }
+}
+
+class Guerrero extends Personaje {
+    public Guerrero(String nombre, int fuerza, int velocidad, int resistencia) {
+        super(nombre, fuerza, velocidad, resistencia);
+    }
+}
+
+class Dios extends Personaje {
+    public Dios(String nombre, int fuerza, int velocidad, int resistencia) {
+        super(nombre, fuerza, velocidad, resistencia);
     }
 }
 
@@ -53,27 +96,28 @@ public class SimulacionMortalKombat {
 
     public static void fraseFinal(String ganador, String perdedor) {
         System.out.println("" + perdedor + " está en las últimas");
-        System.out.println("" + ganador.toUpperCase() + " \"FINISH HIM!\"");
+        System.out.println("" + ganador.toUpperCase() + " \"FINISH HIM!\" ");
         System.out.println("" + ganador + " realiza un FATALITY sobre " + perdedor + "");
         System.out.println("¡" + ganador + " gana la batalla!");
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         Personaje[] personajes = {
-                new Personaje("Scorpion", 30, 20, 100),
-                new Personaje("Sub-Zero", 28, 22, 110),
-                new Personaje("Liu Kang", 32, 25, 95),
-                new Personaje("Raiden", 27, 23, 105),
-                new Personaje("Kitana", 25, 28, 90),
-                new Personaje("Kung Lao", 29, 24, 97),
-                new Personaje("Sonya Blade", 26, 26, 92),
-                new Personaje("Jax", 33, 18, 120),
-                new Personaje("Mileena", 28, 27, 89),
-                new Personaje("Reptile", 27, 25, 93)
+                new Ninja("Scorpion", 30, 20, 100),
+                new Ninja("Sub-Zero", 28, 22, 110),
+                new Guerrero("Liu Kang", 32, 25, 95),
+                new Dios("Raiden", 27, 23, 105),
+                new Guerrero("Kitana", 25, 28, 90),
+                new Ninja("Kung Lao", 29, 24, 97),
+                new Guerrero("Sonya Blade", 26, 26, 92),
+                new Guerrero("Jax", 33, 18, 120),
+                new Ninja("Mileena", 28, 27, 89),
+                new Guerrero("Reptile", 27, 25, 93)
         };
 
-        System.out.println("=== Selección de Personajes Mortal Kombat ===");
+        System.out.println("=== Seleccion de Personajes Mortal Kombat ===");
         for (int i = 0; i < personajes.length; i++) {
             System.out.println((i + 1) + ". " + personajes[i].nombre);
         }
@@ -116,7 +160,7 @@ public class SimulacionMortalKombat {
         Personaje jugador2 = personajes[eleccion2 - 1];
         System.out.println("Jugador 2 ha elegido: " + jugador2.nombre);
 
-        System.out.println("Estadísticas iniciales:");
+        System.out.println("\nEstadísticas iniciales:");
         jugador1.mostrarEstadisticas();
         jugador2.mostrarEstadisticas();
 
@@ -150,7 +194,6 @@ public class SimulacionMortalKombat {
             }
 
             switch (opcion) {
-                
                 case 1:
                     atacante.atacar(defensor);
                     if (defensor.resistencia == 0) {
