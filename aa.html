@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mortal Kombat</title>
+  <style>
+    body {
+      font-family: 'calibre', sans-serif;
+      background-color: #1c1c1c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #f30000;
+    }
+    .personajes {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .personaje {
+      background: rgba(255, 0, 0, 0.233);
+      padding: 20px;
+      border-radius: 10px;
+      width: 40%;
+    }
+    select {
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    .acciones button, #iniciarBtn {
+      margin: 20px;
+      padding: 10px 20px;
+      font-weight: bold;
+      background-color: rgb(248, 66, 10);
+      color: white;
+      border: none;
+      border-radius: 13px;
+      cursor: pointer;
+    }
+    .acciones button:hover, #iniciarBtn:hover {
+      background-color: #666;
+    }
+    .log {
+      background-color: #111;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      height: 200px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+    .highlight {
+      color: #2600ff;
+    }
+    .fatality {
+      color: rgb(255, 17, 0);
+      font-size: 29px;
+      font-weight: bold;
+    }
+
+    
+    .oculto {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>㊙  Mortal Kombat ㊙ </h1>
+
+<div id="seleccion">
+  <div class="personajes">
+    <div class="personaje">
+      <h2> JUGADOR 1</h2>
+      <select id="select1">
+        <option value="Sub-Zero  ">Sub-Zero</option> 
+        <option value="Kung Lao">Kung Lao</option>
+        <option value="Jax">Jax</option>
+        <option value="Sonya">Sonya</option>
+        <option value="Mileena">Mileena</option>
+        <option value="Scorpion">Scorpion</option>
+        <option value="Liu Kang">Liu Kang</option>
+        <option value="Raiden">Raiden</option>
+        <option value="Johnny Cage">Johnny Cage</option>
+        <option value="Kitana">Kitana</option>
+      </select>
+
+    </div>
+    <div class="personaje">
+     <h2>JUGADOR 2</h2>
+      <select id="select2">
+        <option value="Sub-Zero">Sub-Zero</option>
+        <option value="Kung Lao">Kung Lao</option>
+        <option value="Jax">Jax</option>
+        <option value="Sonya">Sonya</option>
+        <option value="Mileena">Mileena</option>
+        <option value="Scorpion">Scorpion</option>
+        <option value="Liu Kang">Liu Kang</option>
+        <option value="Raiden">Raiden</option>
+        <option value="Johnny Cage">Johnny Cage</option>
+        <option value="Kitana">Kitana</option>
+      </select>
+     
+    </div>
+  </div>
+  <button id="iniciarBtn" onclick="iniciarJuego()"> FIGHT ▶
+  </button>
+</div>
+
+
+<div id="combate" style="display: none;">
+  <div class="personajes">
+    <div class="personaje" id="jugador1">
+      <h2 id="nombre1">---</h2>
+      <p class="oculto">Fuerza: <span id="fuerza1">--</span></p>
+      <p class="oculto">Velocidad: <span id="velocidad1">--</span></p>
+      <p class="oculto">Resistencia: <span id="resistencia1">--</span></p>
+    </div>
+    <div class="personaje" id="jugador2">
+      <h2 id="nombre2">---</h2>
+      <p class="oculto">Fuerza: <span id="fuerza2">--</span></p>
+      <p class="oculto">Velocidad: <span id="velocidad2">--</span></p>
+      <p class="oculto">Resistencia: <span id="resistencia2">--</span></p>
+    </div>
+  </div>
+
+  <div class="acciones">
+    <button onclick="accion('atacar')">Atacar</button>
+    <button onclick="accion('especial')">Ataque Especial</button>
+    <button onclick="accion('curar')">Recuperarse</button>
+    <button onclick="reiniciar()">Reiniciar</button>
+  </div>
+
+  <div class="log" id="log">
+    <p><em>El juego ha comenzado...</em></p>
+  </div>
+</div>
+
+<script>
+  const personajes = {
+    "Scorpion":     { nombre: "Scorpion", fuerza: 30, velocidad: 20, resistencia: 100 },
+    "Sub-Zero":     { nombre: "Sub-Zero", fuerza: 28, velocidad: 22, resistencia: 110 },
+    "Liu Kang":     { nombre: "Liu Kang", fuerza: 27, velocidad: 25, resistencia: 95 },
+    "Raiden":       { nombre: "Raiden", fuerza: 35, velocidad: 18, resistencia: 100 },
+    "Johnny Cage":  { nombre: "Johnny Cage", fuerza: 26, velocidad: 24, resistencia: 90 },
+    "Kitana":       { nombre: "Kitana", fuerza: 25, velocidad: 28, resistencia: 85 },
+    "Kung Lao":     { nombre: "Kung Lao", fuerza: 29, velocidad: 23, resistencia: 100 },
+    "Jax":          { nombre: "Jax", fuerza: 32, velocidad: 19, resistencia: 105 },
+    "Sonya":        { nombre: "Sonya", fuerza: 24, velocidad: 26, resistencia: 88 },
+    "Mileena":      { nombre: "Mileena", fuerza: 26, velocidad: 27, resistencia: 92 }
+  };
+
+  let jugador1, jugador2;
+  let turno = 1;
+
+  function iniciarJuego() {
+    const seleccion1 = document.getElementById("select1").value;
+    const seleccion2 = document.getElementById("select2").value;
+
+    jugador1 = { ...personajes[seleccion1] };
+    jugador2 = { ...personajes[seleccion2] };
+    turno = 1;
+
+    document.getElementById("seleccion").style.display = "none";
+    document.getElementById("combate").style.display = "block";
+    document.getElementById("log").innerHTML = "<p><em>El juego ha comenzado...</em></p>";
+
+    actualizarVista();
+  }
+
+  function actualizarVista() {
+    document.getElementById("nombre1").textContent = jugador1.nombre;
+    document.getElementById("fuerza1").textContent = jugador1.fuerza;
+    document.getElementById("velocidad1").textContent = jugador1.velocidad;
+    document.getElementById("resistencia1").textContent = jugador1.resistencia;
+
+    document.getElementById("nombre2").textContent = jugador2.nombre;
+    document.getElementById("fuerza2").textContent = jugador2.fuerza;
+    document.getElementById("velocidad2").textContent = jugador2.velocidad;
+    document.getElementById("resistencia2").textContent = jugador2.resistencia;
+  }
+
+  function log(msg) {
+    const logDiv = document.getElementById("log");
+    logDiv.innerHTML += "<p>" + msg + "</p>";
+    logDiv.scrollTop = logDiv.scrollHeight;
+  }
+
+  function accion(tipo) {
+    if (jugador1.resistencia <= 0 || jugador2.resistencia <= 0) {
+      log("<span class='fatality'>¡La batalla ya terminó!</span>");
+      return;
+    }
+
+    let atacante = turno === 1 ? jugador1 : jugador2;
+    let defensor = turno === 1 ? jugador2 : jugador1;
+    let daño = 0;
+
+    switch (tipo) {
+      case "atacar":
+        daño = atacante.fuerza;
+        defensor.resistencia -= daño;
+        log(`<span class='highlight'>${atacante.nombre}</span> ataca y causa ${daño} de daño.`);
+        break;
+      case "especial":
+        daño = atacante.fuerza + atacante.velocidad;
+        defensor.resistencia -= daño;
+        log(`<span class='highlight'>${atacante.nombre}</span> hace ATAQUE ESPECIAL con ${daño} de daño.`);
+        break;
+      case "curar":
+        atacante.resistencia += 15;
+        log(`${atacante.nombre} se recupera 15 puntos.`);
+        break;
+    }
+
+    if (defensor.resistencia < 0) defensor.resistencia = 0;
+    if (atacante.resistencia < 0) atacante.resistencia = 0;
+
+    actualizarVista();
+
+    if (defensor.resistencia === 0) {
+      log(`<span class='fatality'>${atacante.nombre}: "FINISH HIM!"</span>`);
+      log(`<span class='fatality'>${atacante.nombre} realiza un FATALITY sobre ${defensor.nombre}</span>`);
+      log(`<span class='fatality'>🔥 ¡${atacante.nombre} gana la batalla! 🔥</span>`);
+      return;
+    }
+
+    turno = turno === 1 ? 2 : 1;
+  }
+
+  function reiniciar() {
+    document.getElementById("combate").style.display = "none";
+    document.getElementById("seleccion").style.display = "block";
+    document.getElementById("log").innerHTML = "";
+  }
+</script>
+</body>
+</html>

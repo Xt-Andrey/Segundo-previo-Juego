@@ -73,7 +73,6 @@ class Personaje {
     }
 }
 
-// Subclases para aplicar herencia
 class Ninja extends Personaje {
     public Ninja(String nombre, int fuerza, int velocidad, int resistencia) {
         super(nombre, fuerza, velocidad, resistencia);
@@ -160,7 +159,7 @@ public class SimulacionMortalKombat {
         Personaje jugador2 = personajes[eleccion2 - 1];
         System.out.println("Jugador 2 ha elegido: " + jugador2.nombre);
 
-        System.out.println("\nEstadísticas iniciales:");
+        System.out.println("Estadísticas iniciales:");
         jugador1.mostrarEstadisticas();
         jugador2.mostrarEstadisticas();
 
@@ -194,14 +193,14 @@ public class SimulacionMortalKombat {
             }
 
             switch (opcion) {
-                case 1:
+                case 1 -> {
                     atacante.atacar(defensor);
                     if (defensor.resistencia == 0) {
                         fraseFinal(atacante.nombre, defensor.nombre);
                         batallaActiva = false;
                     }
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     try {
                         atacante.ataqueEspecial(defensor);
                         if (defensor.resistencia == 0) {
@@ -211,18 +210,16 @@ public class SimulacionMortalKombat {
                     } catch (Exception e) {
                         System.out.println("Ocurrió un error al ejecutar el ataque especial: " + e.getMessage());
                     }
-                    break;
-                case 3:
-                    atacante.recuperarse();
-                    break;
-                case 4:
+                }
+                case 3 -> atacante.recuperarse();
+                case 4 -> {
                     atacante.mostrarEstadisticas();
                     defensor.mostrarEstadisticas();
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     System.out.println("La batalla ha terminado por decisión de los jugadores.");
                     batallaActiva = false;
-                    break;
+                }
             }
 
             if (batallaActiva) {
