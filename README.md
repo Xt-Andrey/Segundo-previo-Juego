@@ -1,28 +1,109 @@
-Mortal Kombat 
 
-Este proyecto lo hicimos en grupo tomando como ejemplo el codigo hecho o "base" de un programa de heroes vs villanos. La idea original era crear una pelea entre superhéroes usando programación orientada a objetos, pero nosotros decidimos modificarlo y hacerlo al estilo Mortal Kombat teniendo algunos incombenientes pero se logro el objetivo que buscabamos.
+° 🎮 Mortal Kombat vs DC Comics - Batalla Épica
 
-Todo se juega desde la consola, por turnos, con dos jugadores.
+## 🎯 Objetivo del Proyecto
 
-¿Que hace?
+Este proyecto grupal surgió de un desafío creativo que nos dio nuestroprofesor de una vatalla de super heroes que debiamos modificar y lo que nosotros hicimos fue transformar un sistema de combate entre superhéroes en una experiencia auténtica de Mortal Kombat. Nuestro objetivo principal fue:
 
-Cada jugador elige un personaje del universo Mortal Kombat, tiene para elejir a una de los 10 que deja el codigo. Durante su turno, puede:
+Recrear la esencia brutal de Mortal Kombat en un juego por turnos para consola, manteniendo la elegancia técnica de la programación orientada a objetos
 
-Colocamos a "Atacar" como el base o sea el ataque menos poderoso.
-Hacer un "ataque especial" es mas poderoso que el atacar porque segun el personaje que haya elijido lo puede hasta duplicar.
-tambien se puede usar la abilidad de "Resistencia" asi modificando directamente dandole una mejora al que use esta opcion.
-la opcion  "Ver las estadísticas" permite ver las estadisticas de los personajes de ambos jugadores como "fuerza, velocidad, resistencia", asi viendo cuanto le queda despues de cada ataque o al iniciar la partida.
-la opcion "Terminar la pelea" es por si un jugador se quiere retirar del juego, al retirarce no da a ninguno como ganador.
+Logros clave que perseguimos:
+1. 🔄 Conversión temática completa  
+   De héroes genéricos a personajes icónicos de MK con ataques característicos
+2. ⚔️ Mecánicas de combate mejoradas  
+   Implementación de ataques especiales únicos y el emblemático "FINISH HIM"
+3. 🤝 Demostración práctica de POO  
+   Uso avanzado de herencia, polimorfismo y paso por referencia en el sistema de daños
+4. 🎮 Experiencia de usuario inmersiva  
+   Menú intuitivo con acciones estratégicas por turno para 2 jugadores
 
-Cuando un personaje llega a cero de resistencia, aparece una escena final con la frase clásica "FINISH HIM" y termina el combate.
+El resultado: Un tributo funcional al universo Mortal Kombat que superó las limitaciones del código original, demostrando cómo la colaboración y la adaptación técnica pueden reinventar completamente un sistema de juego.
 
-¿Como lo hicimos?
 
-Empezamos a modificar el codigo que nos proporciono el profesor, que era una pelea entre superhéroes, y desde ahí lo fuimos cambiando entre todos. Le metimos personajes de Mortal Kombat, agregamos cosas nuevas como los ataques especiales, y lo fuimos armando a nuestra manera para que quede más divertido y un poco dinamico estaba trabajando en una pagina en HTML que hacia le simulacion que no se quedara solo en consola porque es aburido jugarlo asi pero es muy poco tiempo y no vamos a alcanzar a realizarla porque la idea era meterle imagenes del juego y unos movimientos o animaciones. 
 
-Todo esto nos sirvió para practicar conceptos como pasar objetos por referencia y cómo los métodos afectan directamente a los personajes.
+Combate interdimensional entre personajes de Mortal Kombat y DC Comics implementado en Java con programación orientada a objetos.
 
-¿Cómo se juega?
+°⚙️ Características Principales
+- ✅ Sistema de combate por turnos con mecánicas avanzadas
+- ✅ 10 personajes únicos (5 de MK, 5 de DC) con habilidades especiales
+- ✅ Sistema de estadísticas y ranking de torneos
+- ✅ Poderes únicos específicos para cada personaje
+- ✅ Mecánicas de críticos, recuperación y ataques especiales
+- ✅ Interfaz de consola intuitiva con mensajes detallados
 
-Abreselm proyecto en Vc studio code, debes tener java descargado y sus respectivas extenciones, compilás y ejecutás nuestro codigo principal de juego Mortal Kombat.
+° 🧩 Estructura de Clases
+maid
+classDiagram
+  Personaje <|-- PersonajeMK
+  Personaje <|-- PersonajeDC
+   class Personaje{
+     -String nombre
+     -int fuerza
+     -int velocidad
+     -int resistencia
+     +atacar()
+     +recuperarse()
+     +ataqueEspecial()
+     +poderUnico()*
+   }
+  class PersonajeMK{
+    -String habilidadEspecial
+    +poderUnico()
+  }
+  class PersonajeDC{
+    -String superpoder
+    +poderUnico()
+  }
+  class SistemaTorneo{
+    -String[] historialGanadores
+    -int[] puntajesJugadores
+    +registrarVictoria()
+    +mostrarRanking()
+  }
+  class EstadisticasBatalla{
+    -int ataques
+    -int ataquesCriticos
+    +registrarAtaque()
+    +mostrarEstadisticas()
+  }
+  class MortalKombat{
+    +main()
+  }
 
+
+la mecanica del juego que se muestra en la consola 
+
+° 🕹️ Mecánicas de Juego
+| Acción                  | Descripción                                        |
+|-------------------------|----------------------------------------------------|
+| 👊   Atacar            | Ataque básico con 15% de probabilidad de crítico   |
+| ⚡   Ataque Especial   | Daño = Fuerza + Velocidad                          |
+| 🌟   Poder Único       | Habilidad única por batalla (ej: "GET OVER HERE!") |
+| 💚   Recuperarse       | Restaura 15-25 puntos de resistencia               |
+| 📊   Ver Stats         | Muestra estadísticas de ambos personajes           |
+| 🏃   Huir              | Termina la batalla (derrota automática)            |
+
+° 🧑‍💻 Ejemplo de Flujo
+los jugadores hacen la seleccion de personajes 
+Jugador 1 elige: Scorpion (Mortal Kombat)
+Jugador 2 elige: Superman (DC Comics)
+
+// Combate
+🔥 Scorpion usa su poder único: 
+"¡GET OVER HERE!" (Daño masivo de fuego)
+⚡ Superman contraataca con Visión de Calor
+
+° 📊 Sistema de Torneos
+- Máximo 10 partidas
+- Puntaje basado en resistencia restante + bonificación por rondas
+- Historial de ganadores y ranking comparativo
+
+
+-------------------------------------------------|
+INTEGRANTES                       |  CODIGOS     |
+----------------------------------|--------------|
+GALVIS GALVIS RUBIEL ANDREY       | [192483]     |
+                                  |              |
+                                  |              |
+                                  |              |
+----------------------------------|--------------|
