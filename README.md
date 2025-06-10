@@ -33,50 +33,7 @@ Combate interdimensional entre personajes de Mortal Kombat y DC Comics implement
 
 📦 Estructura de Código
 
-src/
-├── main/
-│   ├── java/
-│       ├── Personaje.java
-|       |  class Personaje{
-|       |   -String nombre
-|       |   -int fuerza
-|       |   -int velocidad
-|       |   -int resistencia
-|       |   +atacar()
-|       |   +recuperarse()
-|       |   +ataqueEspecial()
-|       |   +poderUnico()*
-|       |  }
-│       ├── PersonajeMK.java
-|       |    class PersonajeMK{
-|       |     -String habilidadEspecial
-|       |     +poderUnico()
-|       |    }
-│       ├── PersonajeDC.java
-|       |    class PersonajeDC{
-|       |    -String superpoder
-|       |    +poderUnico()
-|       |    }
-│       ├── SistemaTorneo.java
-|       |      class SistemaTorneo{
-|       |      -String[] historialGanadores
-|       |      -int[] puntajesJugadores
-|       |      +registrarVictoria()
-|       |      +mostrarRanking()
-|       |      }
-│       ├── EstadisticasBatalla.java
-|       |    class EstadisticasBatalla{
-|       |    -int ataques
-|       |    -int ataquesCriticos
-|       |    +registrarAtaque()
-|       |    +mostrarEstadisticas()
-|       |    }
-│       └── MortalKombat.java
-│       |    class MortalKombat{
-|       |    +main()
-|       |    }
-|
-README
+![alt text](image.png)
 
 
 la mecanica del juego que se muestra en la consola 
