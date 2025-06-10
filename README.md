@@ -70,6 +70,20 @@ classDiagram
     +main()
   }
 
+CICLO 
+
+flowchart TD
+    A[Turno jugador] --> B{Selección acción}
+    B -->|Ataque| C[Calcular daño]
+    B -->|Especial| D[Validar resistencia]
+    B -->|Defensa| E[Reducir daño 50%]
+    C --> F[Actualizar salud]
+    D --> F
+    E --> F
+    F --> G{Condición muerte?}
+    G -->|Sí| H[FINISH HIM]
+    G -->|No| I[Cambio turno]
+
 
 la mecanica del juego que se muestra en la consola 
 
