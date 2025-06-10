@@ -113,14 +113,14 @@ Jugador 2 elige: Superman (DC Comics)
 
 INTEGRANTES                       |  CODIGOS     |
 ----------------------------------|--------------|
-GALVIS GALVIS RUBIEL ANDREY       | [192483]     |
-                                  |              |
-                                  |              |
-                                  |              |
+GALVIS GALVIS RUBIEL ANDREY       |  [192483]    |
+FLOREZ SUAREZ JUAN JOSE           |  [192466]    |
+AMAYA SANCHEZ FEYBER DANILO       |  [192473]    |
+ASCANIO TARAZONA JHORMAN ESNEIDER |  [192534]    |
 
 |       INTEGRANTES      | Rol Principal          | Programación                                                      | Explicación Técnica                                                                 |
 |------------------------|------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-|                        | **Aquitectura POO**   | - Clases base<br>- Herencia<br>- Polimorfismo                     | Diseñó jerarquía de clases con `Personaje` como abstracta e implementaciones específicas (`PersonajeMK`, `PersonajeDC`) usando polimorfismo en métodos clave como `poderUnico()` |
+|    FEYBER AMAYA        | **Aquitectura POO**   | - Clases base<br>- Herencia<br>- Polimorfismo                     | Diseñó jerarquía de clases con `Personaje` como abstracta e implementaciones específicas (`PersonajeMK`, `PersonajeDC`) usando polimorfismo en métodos clave como `poderUnico()` |
 |   ANDREY GALVIS        | **Lógica de Combate**  | - Sistema de turnos<br>- Daños<br>- Acciones especiales           | Implementó mecánica de turnos con colas de acciones, fórmulas de daño contextuales \[daño = fuerza × modificador\] y efectos de estado temporales |
-|                        |**Gestión de Estados** | - Barra de resistencia<br>- Efectos de estado<br>- Validaciones   | Creó sistema de recursos con regeneración progresiva \[stamina_{t+1} = stamina_t + Δt × regeneración\] y máquina de estados para condiciones |
+|    JUAN FLORES         |**Gestión de Estados** | - Barra de resistencia<br>- Efectos de estado<br>- Validaciones   | Creó sistema de recursos con regeneración progresiva \[stamina_{t+1} = stamina_t + Δt × regeneración\] y máquina de estados para condiciones |
 |   JHORMAN ASCANIO      |**Experiencia de Usuario** | - Menú interactivo<br>- Pantallas<br>- Visualización de stats | Desarrolló interfaz navegable con HUD dinámico usando Observer Pattern para actualización en tiempo real |
