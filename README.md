@@ -99,11 +99,19 @@ Jugador 2 elige: Superman (DC Comics)
 - Historial de ganadores y ranking comparativo
 
 
--------------------------------------------------|
 INTEGRANTES                       |  CODIGOS     |
 ----------------------------------|--------------|
 GALVIS GALVIS RUBIEL ANDREY       | [192483]     |
                                   |              |
                                   |              |
                                   |              |
-----------------------------------|--------------|
+
+°👥 Responsabilidades Técnicas del Equipo
+
+| Integrante       | Rol Principal               | Programación                                                    | Documentación                              |
+|------------------|-----------------------------|-----------------------------------------------------------------|--------------------------------------------|
+| **Integrante 1** | Arquitectura POO            | - Clases base<br>- Herencia<br>- Polimorfismo                   | - Diagramas UML<br>- Estructura de clases  |
+| **Integrante 2** | Lógica de Combate           | - Sistema de turnos<br>- Daños<br>- Acciones especiales         | - Manual de reglas<br>- Mecánicas de juego |
+| **Integrante 3** | Gestión de Estados          | - Barra de resistencia<br>- Efectos de estado<br>- Validaciones | - Flujos de juego<br>- Casos de prueba     |
+| **Integrante 4** | Experiencia de Usuario      | - Menú interactivo<br>- Pantallas<br>- Visualización de stats   | - Guía de usuario<br>- Wireframes          |
+
