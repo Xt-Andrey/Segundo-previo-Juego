@@ -19,7 +19,9 @@ Logros clave que perseguimos:
 
 El resultado: Un tributo funcional al universo Mortal Kombat que superó las limitaciones del código original, demostrando cómo la colaboración y la adaptación técnica pueden reinventar completamente un sistema de juego.
 
-CICLO DE VIDA 
+### 🌀 CICLO DE VIDA 
+
+
 ![alt text](sdlc.jpg) 
 
 
