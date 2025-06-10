@@ -31,58 +31,52 @@ Combate interdimensional entre personajes de Mortal Kombat y DC Comics implement
 - ✅ Mecánicas de críticos, recuperación y ataques especiales
 - ✅ Interfaz de consola intuitiva con mensajes detallados
 
-° 🧩 Estructura de Clases
-maid
-classDiagram
-  Personaje <|-- PersonajeMK
-  Personaje <|-- PersonajeDC
-   class Personaje{
-     -String nombre
-     -int fuerza
-     -int velocidad
-     -int resistencia
-     +atacar()
-     +recuperarse()
-     +ataqueEspecial()
-     +poderUnico()*
-   }
-  class PersonajeMK{
-    -String habilidadEspecial
-    +poderUnico()
-  }
-  class PersonajeDC{
-    -String superpoder
-    +poderUnico()
-  }
-  class SistemaTorneo{
-    -String[] historialGanadores
-    -int[] puntajesJugadores
-    +registrarVictoria()
-    +mostrarRanking()
-  }
-  class EstadisticasBatalla{
-    -int ataques
-    -int ataquesCriticos
-    +registrarAtaque()
-    +mostrarEstadisticas()
-  }
-  class MortalKombat{
-    +main()
-  }
+📦 Estructura de Código
 
-CICLO 
-
-flowchart TD
-    A[Turno jugador] --> B{Selección acción}
-    B -->|Ataque| C[Calcular daño]
-    B -->|Especial| D[Validar resistencia]
-    B -->|Defensa| E[Reducir daño 50%]
-    C --> F[Actualizar salud]
-    D --> F
-    E --> F
-    F --> G{Condición muerte?}
-    G -->|Sí| H[FINISH HIM]
-    G -->|No| I[Cambio turno]
+src/
+├── main/
+│   ├── java/
+│       ├── Personaje.java
+|       |  class Personaje{
+|       |   -String nombre
+|       |   -int fuerza
+|       |   -int velocidad
+|       |   -int resistencia
+|       |   +atacar()
+|       |   +recuperarse()
+|       |   +ataqueEspecial()
+|       |   +poderUnico()*
+|       |  }
+│       ├── PersonajeMK.java
+|       |    class PersonajeMK{
+|       |     -String habilidadEspecial
+|       |     +poderUnico()
+|       |    }
+│       ├── PersonajeDC.java
+|       |    class PersonajeDC{
+|       |    -String superpoder
+|       |    +poderUnico()
+|       |    }
+│       ├── SistemaTorneo.java
+|       |      class SistemaTorneo{
+|       |      -String[] historialGanadores
+|       |      -int[] puntajesJugadores
+|       |      +registrarVictoria()
+|       |      +mostrarRanking()
+|       |      }
+│       ├── EstadisticasBatalla.java
+|       |    class EstadisticasBatalla{
+|       |    -int ataques
+|       |    -int ataquesCriticos
+|       |    +registrarAtaque()
+|       |    +mostrarEstadisticas()
+|       |    }
+│       └── MortalKombat.java
+│       |    class MortalKombat{
+|       |    +main()
+|       |    }
+|
+README
 
 
 la mecanica del juego que se muestra en la consola 
@@ -96,6 +90,10 @@ la mecanica del juego que se muestra en la consola
 | 💚   Recuperarse       | Restaura 15-25 puntos de resistencia               |
 | 📊   Ver Stats         | Muestra estadísticas de ambos personajes           |
 | 🏃   Huir              | Termina la batalla (derrota automática)            |
+
+
+
+
 
 ° 🧑‍💻 Ejemplo de Flujo
 los jugadores hacen la seleccion de personajes 
@@ -120,12 +118,9 @@ GALVIS GALVIS RUBIEL ANDREY       | [192483]     |
                                   |              |
                                   |              |
 
-°👥 Responsabilidades Técnicas del Equipo
-
-| Integrante       | Rol Principal               | Programación                                                    | Documentación                              |
-|------------------|-----------------------------|-----------------------------------------------------------------|--------------------------------------------|
-| **Integrante 1** | Arquitectura POO            | - Clases base<br>- Herencia<br>- Polimorfismo                   | - Diagramas UML<br>- Estructura de clases  |
-| **Integrante 2** | Lógica de Combate           | - Sistema de turnos<br>- Daños<br>- Acciones especiales         | - Manual de reglas<br>- Mecánicas de juego |
-| **Integrante 3** | Gestión de Estados          | - Barra de resistencia<br>- Efectos de estado<br>- Validaciones | - Flujos de juego<br>- Casos de prueba     |
-| **Integrante 4** | Experiencia de Usuario      | - Menú interactivo<br>- Pantallas<br>- Visualización de stats   | - Guía de usuario<br>- Wireframes          |
-
+|       INTEGRANTES      | Rol Principal          | Programación                                                      | Explicación Técnica                                                                 |
+|------------------------|------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------------|
+|                        | **Arquitectura POO**   | - Clases base<br>- Herencia<br>- Polimorfismo                     | Diseñó jerarquía de clases con `Personaje` como abstracta e implementaciones específicas (`PersonajeMK`, `PersonajeDC`) usando polimorfismo en métodos clave como `poderUnico()` |
+|                        | **Lógica de Combate**  | - Sistema de turnos<br>- Daños<br>- Acciones especiales           | Implementó mecánica de turnos con colas de acciones, fórmulas de daño contextuales \[daño = fuerza × modificador\] y efectos de estado temporales |
+|                        |**Gestión de Estados** | - Barra de resistencia<br>- Efectos de estado<br>- Validaciones   | Creó sistema de recursos con regeneración progresiva \[stamina_{t+1} = stamina_t + Δt × regeneración\] y máquina de estados para condiciones |
+|                        |**Experiencia de Usuario** | - Menú interactivo<br>- Pantallas<br>- Visualización de stats | Desarrolló interfaz navegable con HUD dinámico usando Observer Pattern para actualización en tiempo real |
