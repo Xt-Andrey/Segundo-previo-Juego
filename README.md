@@ -37,7 +37,7 @@ Combate interdimensional entre personajes de Mortal Kombat y DC Comics implement
 
 📦 Estructura de Código
 
-![alt text](image.png)
+![alt text](AALL.jpg)
 
 
 la mecanica del juego que se muestra en la consola 
