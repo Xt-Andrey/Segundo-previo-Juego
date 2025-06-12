@@ -1,5 +1,21 @@
 
-° 🎮 Mortal Kombat vs DC Comics - Batalla Épica
+## 🎮 Mortal Kombat vs DC Comics - Batalla Épica
+
+INTEGRANTES                       |  CODIGOS     |
+----------------------------------|--------------|
+GALVIS GALVIS RUBIEL ANDREY       |  [192483]    |
+FLOREZ SUAREZ JUAN JOSE           |  [192466]    |
+AMAYA SANCHEZ FEYBER DANILO       |  [192473]    |
+ASCANIO TARAZONA JHORMAN ESNEIDER |  [192534]    |
+
+|       INTEGRANTES      | Rol Principal          | Programación                                                      | Explicación Técnica                                                                 |
+|------------------------|------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------------|
+|    FEYBER AMAYA        | **Aquitectura POO**   | - Clases base<br>- Herencia<br>- Polimorfismo                     | Diseñó jerarquía de clases con `Personaje` como abstracta e implementaciones específicas (`PersonajeMK`, `PersonajeDC`) usando polimorfismo en métodos clave como `poderUnico()` |
+|   ANDREY GALVIS        | **Lógica de Combate**  | - Sistema de turnos<br>- Daños<br>- Acciones especiales           | Implementó mecánica de turnos con colas de acciones, fórmulas de daño contextuales \[daño = fuerza × modificador\] y efectos de estado temporales |
+|    JUAN FLORES         |**Gestión de Estados** | - Barra de resistencia<br>- Efectos de estado<br>- Validaciones   | Creó sistema de recursos con regeneración progresiva \[stamina_{t+1} = stamina_t + Δt × regeneración\] y máquina de estados para condiciones |
+|   JHORMAN ASCANIO      |**Experiencia de Usuario** | - Menú interactivo<br>- Pantallas<br>- Visualización de stats | Desarrolló interfaz navegable con HUD dinámico usando Observer Pattern para actualización en tiempo real |
+
+
 
 ## 🎯 Objetivo del Proyecto
 
@@ -37,7 +53,7 @@ Combate interdimensional entre personajes de Mortal Kombat y DC Comics implement
 
 📦 Estructura de Código
 
-![alt text](AALL.jpg)
+![alt text](diagrama.jpg)
 
 
 la mecanica del juego que se muestra en la consola 
@@ -72,16 +88,3 @@ Jugador 2 elige: Superman (DC Comics)
 - Historial de ganadores y ranking comparativo
 
 
-INTEGRANTES                       |  CODIGOS     |
-----------------------------------|--------------|
-GALVIS GALVIS RUBIEL ANDREY       |  [192483]    |
-FLOREZ SUAREZ JUAN JOSE           |  [192466]    |
-AMAYA SANCHEZ FEYBER DANILO       |  [192473]    |
-ASCANIO TARAZONA JHORMAN ESNEIDER |  [192534]    |
-
-|       INTEGRANTES      | Rol Principal          | Programación                                                      | Explicación Técnica                                                                 |
-|------------------------|------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-|    FEYBER AMAYA        | **Aquitectura POO**   | - Clases base<br>- Herencia<br>- Polimorfismo                     | Diseñó jerarquía de clases con `Personaje` como abstracta e implementaciones específicas (`PersonajeMK`, `PersonajeDC`) usando polimorfismo en métodos clave como `poderUnico()` |
-|   ANDREY GALVIS        | **Lógica de Combate**  | - Sistema de turnos<br>- Daños<br>- Acciones especiales           | Implementó mecánica de turnos con colas de acciones, fórmulas de daño contextuales \[daño = fuerza × modificador\] y efectos de estado temporales |
-|    JUAN FLORES         |**Gestión de Estados** | - Barra de resistencia<br>- Efectos de estado<br>- Validaciones   | Creó sistema de recursos con regeneración progresiva \[stamina_{t+1} = stamina_t + Δt × regeneración\] y máquina de estados para condiciones |
-|   JHORMAN ASCANIO      |**Experiencia de Usuario** | - Menú interactivo<br>- Pantallas<br>- Visualización de stats | Desarrolló interfaz navegable con HUD dinámico usando Observer Pattern para actualización en tiempo real |
