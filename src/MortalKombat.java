@@ -111,7 +111,6 @@ class PersonajeMK extends Personaje {
 
     public String getHabilidadEspecial() { return habilidadEspecial; }
 
-    @Override
     public int poderUnico(Personaje oponente) {
         if (isPoderEspecialUsado()) {
             System.out.println(getNombre() + " ya usó su poder único en esta batalla!");
@@ -186,7 +185,6 @@ class PersonajeMK extends Personaje {
         return danio;
     }
 
-    @Override
     public String getDescripcionPoder() {
         switch (getNombre()) {
             case "Scorpion": return "Cadenas Infernales - Daño masivo de fuego";
@@ -209,7 +207,6 @@ class PersonajeDC extends Personaje {
 
     public String getSuperpoder() { return superpoder; }
 
-    @Override
     public int poderUnico(Personaje oponente) {
         if (isPoderEspecialUsado()) {
             System.out.println(getNombre() + " ya usó su poder único en esta batalla!");
@@ -285,7 +282,6 @@ class PersonajeDC extends Personaje {
         return danio;
     }
 
-    @Override
     public String getDescripcionPoder() {
         switch (getNombre()) {
             case "Superman": return "Poder Kryptoniano - Visión láser y superfuerza";
