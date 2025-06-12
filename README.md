@@ -76,7 +76,8 @@ Jugador 2 elige: Superman (DC Comics)
 ## 🚀 Cómo ejecutar
 1. **Requisitos**:  
    ```bash
-   Java JDK 8+ instalado
+      tener instalado Visual Studio Code
+       con la estencion java descargada 
    ```
 2. **Compilación**:  
    ```bash
