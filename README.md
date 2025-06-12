@@ -77,7 +77,7 @@ Jugador 2 elige: Superman (DC Comics)
 1. **Requisitos**:  
    ```bash
       tener instalado Visual Studio Code
-       con la estencion java descargada 
+      con la estencion java descargada 
    ```
 2. **Compilación**:  
    ```bash
