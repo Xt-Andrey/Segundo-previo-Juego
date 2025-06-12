@@ -407,14 +407,12 @@ public class MortalKombat {
 
     public static Personaje[] crearPersonajes() {
         return new Personaje[] {
-            // Personajes de Mortal Kombat
             new PersonajeMK("Scorpion", 35, 25, 120, "Cadenas del Infierno"),
             new PersonajeMK("Sub-Zero", 30, 28, 125, "Maestro del Hielo"),
             new PersonajeMK("Liu Kang", 38, 30, 110, "Dragón de Fuego"),
             new PersonajeMK("Raiden", 32, 27, 130, "Dios del Trueno"),
             new PersonajeMK("Kitana", 28, 35, 105, "Princesa Asesina"),
 
-            // Personajes de DC Comics
             new PersonajeDC("Superman", 45, 30, 150, "Poder Kryptoniano"),
             new PersonajeDC("Batman", 25, 32, 100, "Genio Táctico"),
             new PersonajeDC("Wonder Woman", 40, 28, 135, "Guerrera Amazónica"),
