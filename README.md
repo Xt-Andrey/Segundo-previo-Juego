@@ -4,7 +4,7 @@
 
 ## 🎯 Objetivo del Proyecto
 
-Este proyecto grupal surgió de un desafío creativo que nos dio nuestroprofesor de una vatalla de super heroes que debiamos modificar y lo que nosotros hicimos fue transformar un sistema de combate entre superhéroes en una experiencia auténtica de Mortal Kombat. Nuestro objetivo principal fue:
+Este proyecto grupal surgió de un desafío creativo que nos dio nuestro profesor de una vatalla de super heroes que debiamos modificar y lo que nosotros hicimos fue transformar un sistema de combate entre superhéroes en una experiencia auténtica de Mortal Kombat. Nuestro objetivo principal fue:
 
 Recrear la esencia brutal de Mortal Kombat en un juego por turnos para consola, manteniendo la elegancia técnica de la programación orientada a objetos
 
