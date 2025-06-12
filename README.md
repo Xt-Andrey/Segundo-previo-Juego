@@ -88,3 +88,16 @@ Jugador 2 elige: Superman (DC Comics)
 - Historial de ganadores y ranking comparativo
 
 
+## 🚀 Cómo ejecutar
+1. **Requisitos**:  
+   ```bash
+   Java JDK 8+ instalado
+   ```
+2. **Compilación**:  
+   ```bash
+   javac MortalKombat.java
+   ```
+3. **Ejecución**:  
+   ```bash
+   java MortalKombat
+   ```
