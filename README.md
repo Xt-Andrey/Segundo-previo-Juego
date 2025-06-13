@@ -103,18 +103,19 @@ Poder especial usado: No
 ...
 ``` 
 
-
-## 🚀 Cómo ejecutar
-1. **Requisitos**:  
-   ```bash
-      tener instalado Visual Studio Code
+## 🚀 Cómo Ejecutar
+ **Requisitos**:  
+   ```b
+      tener instalado Visual Studio Code o una aplicacion que deje compilar un codigo de consola 
       con la estencion java descargada 
    ```
-2. **Compilación**:  
+1. Clona o descarga el repositorio.
+2. Abre una terminal y navega hasta el directorio del proyecto.
+3. Compila el programa:
    ```bash
    javac MortalKombat.java
    ```
-3. **Ejecución**:  
+4. Ejecuta el programa:
    ```bash
    java MortalKombat
    ```
