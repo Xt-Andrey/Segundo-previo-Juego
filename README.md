@@ -100,8 +100,7 @@ Fuerza: 35
 Velocidad: 25
 Resistencia: 120/120
 Poder especial usado: No
-
-
+...
 
 ## 🚀 Cómo ejecutar
 1. **Requisitos**:  
