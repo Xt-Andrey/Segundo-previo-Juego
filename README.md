@@ -71,6 +71,34 @@ Jugador 2 elige: Superman (DC Comics)
 - Máximo 10 partidas
 - Puntaje basado en resistencia restante + bonificación por rondas
 - Historial de ganadores y ranking comparativo
+ 
+## Ejemplo de ejecucion
+╔══════════════════════════════════════════════════════════╗
+║             MORTAL KOMBAT VS DC COMICS                   ║
+║                   BATALLA ÉPICA                          ║
+╚══════════════════════════════════════════════════════════╝
+
+═══ SELECCIÓN DE LUCHADORES ═══
+MORTAL KOMBAT:
+1. Scorpion (Mortal Kombat) - Poder: Cadenas Infernales - Daño masivo de fuego
+2. Sub-Zero (Mortal Kombat) - Poder: Congelamiento Total - Daño y ralentización
+...
+
+--- Selección Jugador 1 ---
+Jugador 1, elige tu luchador (1-10): 1
+Jugador 1 eligió: Scorpion
+
+--- Selección Jugador 2 ---
+Jugador 2, elige tu luchador (1-10): 6
+Jugador 2 eligió: Superman
+
+¡COMIENZA LA BATALLA INTERDIMENSIONAL!
+--- Estadísticas de Scorpion ---
+Fuerza: 35
+Velocidad: 25
+Resistencia: 120/120
+Poder especial usado: No
+...
 
 
 ## 🚀 Cómo ejecutar
