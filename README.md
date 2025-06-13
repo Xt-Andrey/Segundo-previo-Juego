@@ -72,7 +72,9 @@ Jugador 2 elige: Superman (DC Comics)
 - Puntaje basado en resistencia restante + bonificación por rondas
 - Historial de ganadores y ranking comparativo
  
-## Ejemplo de ejecucion
+## Ejemplo de Ejecución
+
+```plaintext
 ╔══════════════════════════════════════════════════════════╗
 ║             MORTAL KOMBAT VS DC COMICS                   ║
 ║                   BATALLA ÉPICA                          ║
@@ -98,7 +100,7 @@ Fuerza: 35
 Velocidad: 25
 Resistencia: 120/120
 Poder especial usado: No
-...
+
 
 
 ## 🚀 Cómo ejecutar
