@@ -8,6 +8,11 @@ Este proyecto grupal surgió de un desafío creativo que nos dio nuestro profeso
 
 Recrear la esencia brutal de Mortal Kombat en un juego por turnos para consola, manteniendo la elegancia técnica de la programación orientada a objetos
 
+### 🌀 CICLO DE VIDA 
+
+
+![alt text](sdlc.jpg) 
+
 Logros clave que perseguimos:
 1. 🔄 Conversión temática completa  
    De héroes genéricos a personajes icónicos de MK con ataques característicos
@@ -20,10 +25,6 @@ Logros clave que perseguimos:
 
 El resultado: Un tributo funcional al universo Mortal Kombat que superó las limitaciones del código original, demostrando cómo la colaboración y la adaptación técnica pueden reinventar completamente un sistema de juego.
 
-### 🌀 CICLO DE VIDA 
-
-
-![alt text](sdlc.jpg) 
 
 
 Combate interdimensional entre personajes de Mortal Kombat y DC Comics implementado en Java con programación orientada a objetos.
